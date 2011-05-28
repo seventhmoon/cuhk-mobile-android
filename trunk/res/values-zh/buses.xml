@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string-array name="day_type_array">
+		<item>教學日</item>
+		<item>非教學日</item>
+	</string-array>
+	<string-array name="teaching_day_bus_array">
+		<item>大學站>聯合>新亞</item>
+		<item>大學站>逸夫</item>
+		<item>大學站>逸夫>十一苑>逸夫>大學站</item>
+		<item>大學站>十一苑</item>
+		<item>新亞>聯合>大學站</item>
+		<item>逸夫>大學站</item>
+		<item>十一苑>大學站</item>
+	</string-array>
+	<string-array name="non_teaching_day_bus_array">
+		<item>大學站>逸夫</item>
+		<item>大學站>十一苑</item>
+		<item>逸夫>大學站</item>
+		<item>十一苑>大學站</item>
+	</string-array>
+</resources>

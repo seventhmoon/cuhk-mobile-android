@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Production <com.google.android.maps.MapView xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:id="@+id/mapview" android:layout_width="fill_parent" android:layout_height="fill_parent" 
+	android:clickable="true" android:apiKey="00tcDAm7JZi2e_7vBvt6KmQI-NS4Tx8BupOXq5g" 
+	/> -->
+<!-- Debug -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent">
+	<com.google.android.maps.MapView
+		xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/mapview"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:clickable="true" android:apiKey="00tcDAm7JZi3fwH4edtfw-6S4fEMe_2NhjanZUA" />
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+		android:orientation="vertical" android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+		<com.google.ads.AdView android:id="@+id/adView"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			ads:adUnitId="a14dd881af3fcdd" ads:adSize="BANNER"
+			ads:loadAdOnCreate="true" />
+	</LinearLayout>
+</RelativeLayout>

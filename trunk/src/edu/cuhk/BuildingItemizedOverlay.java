@@ -1,4 +1,4 @@
-package edu.cuhk.map;
+package edu.cuhk;
 
 import android.app.AlertDialog;
 import android.content.Context;

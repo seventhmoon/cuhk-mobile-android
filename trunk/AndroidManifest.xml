@@ -4,13 +4,34 @@
 	<uses-sdk android:minSdkVersion="7" />
 
 	<application android:icon="@drawable/icon" android:label="@string/app_name">
-		<activity android:name=".CUCampus" android:label="@string/app_name">
-			<intent-filter>
+		<activity android:name=".CUCampus" android:label="@string/app_name"
+			android:theme="@android:style/Theme.NoTitleBar">
+						<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
+
+		<activity android:name=".CampusMap" android:label="@string/app_name"
+			android:theme="@android:style/Theme.NoTitleBar">
+	
+		</activity>
+
+		<activity android:name=".RestaurantMap" android:label="@string/app_name"
+			android:theme="@android:style/Theme.NoTitleBar">
+
+		</activity>
+
+		<activity android:name=".BannerExample" android:label="@string/app_name"
+			android:theme="@android:style/Theme.NoTitleBar">
+		</activity>
+
+		<activity android:name="com.google.ads.AdActivity"
+			android:configChanges="keyboard|keyboardHidden|orientation" />
 		<uses-permission android:name="android.permission.INTERNET" />
 		<uses-library android:name="com.google.android.maps" />
+
 	</application>
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 </manifest>

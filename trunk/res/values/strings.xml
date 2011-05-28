@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="hello">Hello World, CUCampus!</string>
-    <string name="app_name">CUCampus</string>
+    <string name="app_name">CUMobile</string>
+    <string name="admob_id">a14dd881af3fcdd</string>
 </resources>

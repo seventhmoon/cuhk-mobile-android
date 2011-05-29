@@ -21,13 +21,16 @@ public class CUCampus extends ListActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		String[] menuItemArray = { "School Bus Information", "Campus Map" };
+		String[] menuItemArray = getResources().getStringArray(
+				R.array.main_menu);
+		// String[] menuItemArray = { "School Bus Information", "Bus Stops",
+		// "Banks and ATMs" };
 		menuItemAdapter = new ArrayAdapter<String>(this, R.layout.list_layout,
 				menuItemArray);
 		setListAdapter(menuItemAdapter);
-		
-	    //AdView adView = (AdView)this.findViewById(R.id.adView);
-	    //adView.loadAd(new AdRequest());
+
+		// AdView adView = (AdView)this.findViewById(R.id.adView);
+		// adView.loadAd(new AdRequest());
 	}
 
 	@Override
@@ -37,29 +40,40 @@ public class CUCampus extends ListActivity {
 
 		if (getListAdapter() == menuItemAdapter) {
 			if (position == 0) {
-				//setListAdapter(teachingDayRouteAdapter);
-				Intent intent=new Intent();
+				// setListAdapter(teachingDayRouteAdapter);
+				Intent intent = new Intent();
 				intent.setClass(CUCampus.this, CUSchoolBus.class);
-		
+
 				startActivity(intent);
 			} else if (position == 1) {
-				Intent intent=new Intent();
+
+				Intent intent = new Intent();
 				intent.setClass(CUCampus.this, CampusMap.class);
-				Bundle bundle=new Bundle();
-				bundle.putBoolean("schoolBus", true);
-				//bundle.putString("map", Restaurant.UC.toString());
+				Bundle bundle = new Bundle();
+				bundle.putBoolean("bank", true);
 				intent.putExtras(bundle);
 				startActivity(intent);
-				//setListAdapter(nonTeachingDayRouteAdapter);
+			} else if (position == 2) {
+
+				Intent intent = new Intent();
+				intent.setClass(CUCampus.this, CampusMap.class);
+				Bundle bundle = new Bundle();
+				bundle.putBoolean("store", true);
+				intent.putExtras(bundle);
+				startActivity(intent);
 			}
 		}
 	}
-	
+
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if ((keyCode == KeyEvent.KEYCODE_BACK)) {
-			setListAdapter(menuItemAdapter);
-			return true;
+			if (getListAdapter().equals(menuItemAdapter)) {
+				return super.onKeyDown(keyCode, event);
+			} else {
+				setListAdapter(menuItemAdapter);
+				return true;
+			}
 		}
 		return super.onKeyDown(keyCode, event);
 	}

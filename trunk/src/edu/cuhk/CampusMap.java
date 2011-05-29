@@ -10,6 +10,10 @@ import com.google.android.maps.Overlay;
 import com.google.android.maps.OverlayItem;
 
 import edu.cuhk.R;
+import edu.cuhk.place.Bank;
+import edu.cuhk.place.BusStop;
+import edu.cuhk.place.Restaurant;
+import edu.cuhk.place.Store;
 
 import android.app.*;
 import android.content.Context;
@@ -80,20 +84,61 @@ public class CampusMap extends MapActivity {
 		mapOverlays.add(currentLocOverlay);
 
 		Bundle bundle = this.getIntent().getExtras();
-		boolean schoolBus = bundle.getBoolean("schoolBus");
+		boolean busStop = bundle.getBoolean("busStop");
+		boolean bank = bundle.getBoolean("bank");
 		boolean restaurant = bundle.getBoolean("restaurant");
+		boolean store = bundle.getBoolean("store");
 
-		if (schoolBus) {
+		if (busStop) {
 			BuildingItemizedOverlay overlay = new BuildingItemizedOverlay(this
 					.getResources().getDrawable(R.drawable.bus_stop), this);
-			for (BusStop busStop : BusStop.values()) {
+			for (BusStop stop : BusStop.values()) {
 				OverlayItem overlayitem = new OverlayItem(
-						busStop.getGeoPoint(), "", "");
+						stop.getGeoPoint(), "", "");
 				overlay.addOverlay(overlayitem);
 			}
 			mapOverlays.add(overlay);
 		}
 
+		if (bank){
+			BuildingItemizedOverlay overlay = new BuildingItemizedOverlay(this
+					.getResources().getDrawable(R.drawable.red_pin), this);
+			
+			OverlayItem hase = new OverlayItem(Bank.HASE.getGeoPoint(), getResources().getText(R.string.hase).toString(), getResources().getText(R.string.hase_loc).toString());
+			overlay.addOverlay(hase);
+			OverlayItem bea = new OverlayItem(Bank.BEA.getGeoPoint(), getResources().getText(R.string.bea).toString(), getResources().getText(R.string.bea_loc).toString());
+			overlay.addOverlay(bea);
+
+			OverlayItem haseatm = new OverlayItem(Bank.HASE_ATM_MTR.getGeoPoint(), getResources().getText(R.string.hase_atm).toString(), getResources().getText(R.string.hase_atm_loc).toString());
+			overlay.addOverlay(haseatm);
+			OverlayItem beaatm = new OverlayItem(Bank.BEA_ATM_FRANKLIN.getGeoPoint(), getResources().getText(R.string.bea_atm).toString(), getResources().getText(R.string.bea_atm_loc).toString());
+			overlay.addOverlay(beaatm);
+			
+			OverlayItem hsbcatm = new OverlayItem(Bank.HSBC_ATM_MTR.getGeoPoint(), getResources().getText(R.string.hsbc_atm).toString(), getResources().getText(R.string.hsbc_atm_loc).toString());
+			overlay.addOverlay(hsbcatm);
+			OverlayItem bocatm = new OverlayItem(Bank.BOA_ATM_MTR.getGeoPoint(), getResources().getText(R.string.boa_atm).toString(), getResources().getText(R.string.boa_atm_loc).toString());
+			overlay.addOverlay(bocatm);
+			
+			mapOverlays.add(overlay);
+		}
+		
+		if (store){
+			BuildingItemizedOverlay overlay = new BuildingItemizedOverlay(this
+					.getResources().getDrawable(R.drawable.red_pin), this);
+			
+			OverlayItem parknstore = new OverlayItem(Store.PARK_N_SHOP.getGeoPoint(), getResources().getText(R.string.park_n_shop).toString(), getResources().getText(R.string.park_n_shop_loc).toString() +"\n" + getResources().getText(R.string.park_n_shop_opening).toString());
+			overlay.addOverlay(parknstore);
+			OverlayItem seveneleven = new OverlayItem(Store.SEVEN_ELEVEN.getGeoPoint(), getResources().getText(R.string.seven_eleven).toString(), getResources().getText(R.string.seven_eleven_loc).toString());
+			overlay.addOverlay(seveneleven);
+			
+			OverlayItem bookstore = new OverlayItem(Store.UNIVERSITY_BOOK_STORE.getGeoPoint(), getResources().getText(R.string.cu_book_store).toString(), getResources().getText(R.string.cu_book_store_loc).toString() +"\n" + getResources().getText(R.string.cu_book_store_opening).toString());
+			overlay.addOverlay(bookstore);
+			OverlayItem ccbookstore = new OverlayItem(Store.CC_BOOK_STORE.getGeoPoint(), getResources().getText(R.string.cc_book_store).toString(), getResources().getText(R.string.cc_book_store_loc).toString() +"\n" + getResources().getText(R.string.cc_book_store_opening).toString());
+			overlay.addOverlay(ccbookstore);
+			
+			mapOverlays.add(overlay);
+		}
+		
 		// String map = bundle.getString("map");
 		// if (map != null){
 		// GeoPoint p = Restaurant.valueOf(map).getGeoPoint();

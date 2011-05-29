@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="hase">Hang Seng Bank</string>
+	<string name="hase_loc">1/F, John Fulton Centre, Central Campus</string>
+	<string name="bea">The Bank of East Asia</string>
+	<string name="bea_loc">LG01, Li Wai Chun Building, Chung Chi College</string>
+	<string name="hase_atm">Hang Seng Bank ATM</string>
+	<string name="hase_atm_loc">1/F University Station</string>
+	<string name="bea_atm">The Bank of East Asia ATM</string>
+	<string name="bea_atm_loc">G/F, Benjamin Franklin Centre, Central Campus</string>
+	<string name="hsbc_atm">HSBC ATM</string>
+	<string name="hsbc_atm_loc">G/F University Station</string>
+	<string name="boa_atm">Bank of China ATM</string>
+	<string name="boa_atm_loc">G/F University Station</string>
+</resources>

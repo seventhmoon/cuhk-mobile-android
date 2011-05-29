@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="park_n_shop">Park\'n Shop Supermarket</string>
+	<string name="park_n_shop_loc">LG, John Fulton Centre, Central Campus</string>
+	<string name="park_n_shop_opening">08:30-22:00(Mon-Fri)\n08:30-21:00(Sat, Sun and public holidays)</string>
+	<string name="seven_eleven">Seven Eleven</string>
+	<string name="seven_eleven_loc">G/F University Station</string>
+	<string name="seven_eleven_opening"></string>
+	<string name="cu_book_store">University Book Store</string>
+	<string name="cu_book_store_loc">LG, John Fulton Centre, Central Campus</string>
+	<string name="cu_book_store_opening">09:00-21:00(Mon-Fri)\n09:00-13:30(Sat)</string>
+	<string name="cc_book_store">Second Life (A&amp;P)</string>
+	<string name="cc_book_store_loc">G05, Li Wai Chun Building, Chung Chi College</string>
+	<string name="cc_book_store_opening">09:30-18:30</string>
+</resources>

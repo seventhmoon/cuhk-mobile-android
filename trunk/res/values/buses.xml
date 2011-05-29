@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+	<string-array name="bus_menu">
+		<item>Route</item>
+		<item>Bus Stop</item>
+	</string-array>
 	<string-array name="day_type_array">
 		<item>Teaching Day</item>
 		<item>Non-teaching Day</item>

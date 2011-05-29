@@ -1,8 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-	<string name="uc_student_canteen">United College Student Canteen</string>
-	<string name="uc_student_canteen_opening">Everyday 08:00-21:00</string>
-	<string name="uc_staff_restaurant">United College Staff Restaurant</string>
-	<string name="uc_staff_restaurant_opening">Everyday 11:00-15:00, 17:30-21:30</string>
+	<string-array name="restaurant_array">
+		<item>Chung Chi College Student Canteen</item>
+		<item>Li Wai Chun Building Coffee Shop</item>
+		<item>Orchid Lodge</item>
+		<item>Chung Chi College Staff Club</item>
+		<item>New Asia College Student Canteen</item>
+		<item>New Asia College Staff Canteen</item>
+		<item>New Asia College Yun Chi Hsien</item>
+		<item>United College Student Canteen</item>
+		<item>United College Staff Restaurant</item>
+		<item>Shaw College Student Canteen</item>
+		<item>Shaw Garden</item>
+		<item>Sky Cafe</item>
+		<item>Basic Medical Sciences Building Snack Bar</item>
+		<item>Benjamin Franklin Centre Staff Canteen</item>
+		<item>Coffee Corner</item>
+		<item>Pool Side Cafe</item>
+		<item>Benjamin Franklin Centre Student Canteen</item>
+		<item>Benjamin Franklin Centre Fast Food Shop</item>
+		<item>Staff Common Room Clubhouse</item>
+	</string-array>
+	<string-array name="restaurant_opening_array">
+		<item>07:30-21:00</item>
+		<item>08:00-20:00(Mon-Fri)\n08:00-17:00(Sat)</item>
+		<item>07:30-21:00(Mon-Fri)\n07:30-17:00(Sat)</item>
+		<item>11:00-14:30, 17:30-21:00(Mon-Fri)\n11:00-14:30, 17:30-22:00(Sat, Sun and Public holidays)</item>
+		<item>11:00-21:00(Mon-Sat)</item>
+		<item>11:00-14:30(Mon-Fri)</item>
+		<item>12:00-14:00(Mon-Fri)</item>
+		<item>08:00-21:00</item>
+		<item>11:00-15:00, 17:30-21:30</item>
+		<item>08:00-21:00(Mon-Sat), 09:00-21:00(Sun and Public Holidays)</item>
+		<item>11:00-15:00, 18:00-21:00(Mon-Sun)</item>
+		<item>11:00-14:00(Mon-Fri)</item>
+		<item>07:45-18:00(Mon-Sat)</item>
+		<item>11:00-15:00, 17:00-21:00(Mon-Fri, Sun)</item>
+		<item>07:30-19:30(Mon-Sat)</item>
+		<item>11:30-21:00(Mon-Sat)</item>
+		<item>11:00-21:00(Mon-Fri)\n08:30-21:00(Sun)</item>
+		<item>07:30-21:00(Mon-Sat)</item>
+		<item>07:30-10:00, 12:00-21:30</item>
+	</string-array>
 </resources>

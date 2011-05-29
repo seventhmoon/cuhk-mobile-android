@@ -3,6 +3,8 @@ package edu.cuhk;
 import com.google.ads.AdRequest;
 import com.google.ads.AdView;
 
+import edu.cuhk.R;
+
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,7 +21,7 @@ public class CUCampus extends ListActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		String[] menuItemArray = { "Transport", "Restaurants", "Map" };
+		String[] menuItemArray = { "School Bus Information", "Campus Map" };
 		menuItemAdapter = new ArrayAdapter<String>(this, R.layout.list_layout,
 				menuItemArray);
 		setListAdapter(menuItemAdapter);
@@ -36,11 +38,16 @@ public class CUCampus extends ListActivity {
 		if (getListAdapter() == menuItemAdapter) {
 			if (position == 0) {
 				//setListAdapter(teachingDayRouteAdapter);
+				Intent intent=new Intent();
+				intent.setClass(CUCampus.this, CUSchoolBus.class);
+		
+				startActivity(intent);
 			} else if (position == 1) {
 				Intent intent=new Intent();
-				intent.setClass(CUCampus.this, RestaurantMap.class);
+				intent.setClass(CUCampus.this, CampusMap.class);
 				Bundle bundle=new Bundle();
-				bundle.putString("map", Restaurant.UC.toString());
+				bundle.putBoolean("schoolBus", true);
+				//bundle.putString("map", Restaurant.UC.toString());
 				intent.putExtras(bundle);
 				startActivity(intent);
 				//setListAdapter(nonTeachingDayRouteAdapter);

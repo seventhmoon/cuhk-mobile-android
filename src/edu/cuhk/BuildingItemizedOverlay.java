@@ -26,9 +26,13 @@ public class BuildingItemizedOverlay extends ItemizedOverlay<OverlayItem>  {
 	protected boolean onTap(int index) {
 		OverlayItem item = mOverlays.get(index);
 		AlertDialog.Builder dialog = new AlertDialog.Builder(mContext);
-		dialog.setTitle(item.getTitle());
-		dialog.setMessage(item.getSnippet());
-		dialog.show();
+		String title = item.getTitle();
+		String message = item.getSnippet();
+		dialog.setTitle(title);
+		dialog.setMessage(message);
+		if (!title.equals("") && !message.equals("")){
+			dialog.show();
+		}
 		return true;
 	}
 

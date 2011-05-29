@@ -1,4 +1,4 @@
-package edu.cuhk;
+package edu.cuhk.place;
 
 import com.google.android.maps.GeoPoint;
 

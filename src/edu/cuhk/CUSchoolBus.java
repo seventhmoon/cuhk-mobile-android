@@ -7,9 +7,11 @@ import com.google.ads.AdSize;
 import com.google.ads.AdView;
 
 import edu.cuhk.R;
+import edu.cuhk.place.BusStop;
 
 import android.app.Activity;
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -19,7 +21,7 @@ import android.widget.*;
 public class CUSchoolBus extends ListActivity {
 	/** Called when the activity is first created. */
 	// private final String MY_AD_UNIT_ID = "a14dd881af3fcdd";
-
+	ArrayAdapter<String> menuAdapter;
 	ArrayAdapter<String> dayTypesAdapter, upTimesAdapter, downTimesAdapter;
 	ArrayAdapter<String> teachingDayRouteAdapter, nonTeachingDayRouteAdapter;
 	ArrayAdapter<String> teachingDayTimetableAdapter1,
@@ -83,14 +85,26 @@ public class CUSchoolBus extends ListActivity {
 			} else if (position == 3) {
 				setListAdapter(nonTeachingDayTimetableAdapter4);
 			}
+		} else if (getListAdapter() == menuAdapter) {
+			if (position == 0) {
+				setListAdapter(dayTypesAdapter);
+			} else if (position == 1) {
+				Intent intent = new Intent();
+				intent.setClass(CUSchoolBus.this, CampusMap.class);
+				Bundle bundle = new Bundle();
+				bundle.putBoolean("busStop", true);
+				intent.putExtras(bundle);
+				startActivity(intent);
+			}
+
 		}
 	}
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if ((keyCode == KeyEvent.KEYCODE_BACK)) {
-			if (getListAdapter() != dayTypesAdapter) {
-				setListAdapter(dayTypesAdapter);
+			if (getListAdapter() != menuAdapter) {
+				setListAdapter(menuAdapter);
 			} else {
 				return super.onKeyDown(keyCode, event);
 			}
@@ -102,7 +116,7 @@ public class CUSchoolBus extends ListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		// setContentView(R.layout.list_layout);
 		/*
 		 * List<Map<String, String>> list = new ArrayList<Map<String,
 		 * String>>(); HashMap<String, String> map1 = new HashMap<String,
@@ -125,6 +139,11 @@ public class CUSchoolBus extends ListActivity {
 		// stopsAdapter = new ArrayAdapter<BusStop>(this, R.layout.list_layout,
 		// stopsArray);
 
+		String[] menuItemsArray = getResources().getStringArray(
+				R.array.bus_menu);
+
+		this.menuAdapter = new ArrayAdapter<String>(this, R.layout.list_layout,
+				menuItemsArray);
 		String[] dayTypesArray = getResources().getStringArray(
 				R.array.day_type_array);
 		dayTypesAdapter = new ArrayAdapter<String>(this, R.layout.list_layout,
@@ -175,21 +194,23 @@ public class CUSchoolBus extends ListActivity {
 				R.layout.list_layout, getResources().getStringArray(
 						R.array.ntd_r11_to_mtr_time_array));
 
-//		String[] buses = getResources().getStringArray(R.array.bus_array);
-//		String[] upTimes = getResources().getStringArray(R.array.up_time_array);
-//		String[] downTimes = getResources().getStringArray(
-//				R.array.down_time_array);
+		// String[] buses = getResources().getStringArray(R.array.bus_array);
+		// String[] upTimes =
+		// getResources().getStringArray(R.array.up_time_array);
+		// String[] downTimes = getResources().getStringArray(
+		// R.array.down_time_array);
 
 		dayTypesAdapter = new ArrayAdapter<String>(this, R.layout.list_layout,
 				dayTypesArray);
-//		busesAdapter = new ArrayAdapter<String>(this, R.layout.list_layout,
-//				buses);
-//		upTimesAdapter = new ArrayAdapter<String>(this, R.layout.list_layout,
-//				upTimes);
-//		downTimesAdapter = new ArrayAdapter<String>(this, R.layout.list_layout,
-//				downTimes);
+		// busesAdapter = new ArrayAdapter<String>(this, R.layout.list_layout,
+		// buses);
+		// upTimesAdapter = new ArrayAdapter<String>(this, R.layout.list_layout,
+		// upTimes);
+		// downTimesAdapter = new ArrayAdapter<String>(this,
+		// R.layout.list_layout,
+		// downTimes);
 
-		setListAdapter(dayTypesAdapter);
+		setListAdapter(menuAdapter);
 		// setListAdapter(stopsAdapter);
 
 	}

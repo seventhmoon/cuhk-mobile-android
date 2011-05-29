@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="main_menu">
-		<item>School Bus</item>
 		<item>Bank and ATM</item>
+		<item>Restaurant</item>
+		<item>School Bus</item>
 		<item>Store</item>
 	</string-array>
 </resources>

@@ -39,13 +39,13 @@ public class CUCampus extends ListActivity {
 		super.onListItemClick(l, v, position, id);
 
 		if (getListAdapter() == menuItemAdapter) {
-			if (position == 0) {
+			if (position == 2) {
 				// setListAdapter(teachingDayRouteAdapter);
 				Intent intent = new Intent();
 				intent.setClass(CUCampus.this, CUSchoolBus.class);
 
 				startActivity(intent);
-			} else if (position == 1) {
+			} else if (position == 0) {
 
 				Intent intent = new Intent();
 				intent.setClass(CUCampus.this, CampusMap.class);
@@ -53,12 +53,20 @@ public class CUCampus extends ListActivity {
 				bundle.putBoolean("bank", true);
 				intent.putExtras(bundle);
 				startActivity(intent);
-			} else if (position == 2) {
+			} else if (position == 3) {
 
 				Intent intent = new Intent();
 				intent.setClass(CUCampus.this, CampusMap.class);
 				Bundle bundle = new Bundle();
 				bundle.putBoolean("store", true);
+				intent.putExtras(bundle);
+				startActivity(intent);
+			}else if (position == 1) {
+
+				Intent intent = new Intent();
+				intent.setClass(CUCampus.this, CampusMap.class);
+				Bundle bundle = new Bundle();
+				bundle.putBoolean("restaurant", true);
 				intent.putExtras(bundle);
 				startActivity(intent);
 			}

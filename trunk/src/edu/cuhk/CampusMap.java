@@ -91,7 +91,7 @@ public class CampusMap extends MapActivity {
 
 		if (busStop) {
 			BuildingItemizedOverlay overlay = new BuildingItemizedOverlay(this
-					.getResources().getDrawable(R.drawable.bus_stop), this);
+					.getResources().getDrawable(R.drawable.pin_blue), this);
 			for (BusStop stop : BusStop.values()) {
 				OverlayItem overlayitem = new OverlayItem(
 						stop.getGeoPoint(), "", "");
@@ -102,7 +102,7 @@ public class CampusMap extends MapActivity {
 
 		if (bank){
 			BuildingItemizedOverlay overlay = new BuildingItemizedOverlay(this
-					.getResources().getDrawable(R.drawable.red_pin), this);
+					.getResources().getDrawable(R.drawable.pin_purple), this);
 			
 			OverlayItem hase = new OverlayItem(Bank.HASE.getGeoPoint(), getResources().getText(R.string.hase).toString(), getResources().getText(R.string.hase_loc).toString());
 			overlay.addOverlay(hase);
@@ -124,7 +124,7 @@ public class CampusMap extends MapActivity {
 		
 		if (store){
 			BuildingItemizedOverlay overlay = new BuildingItemizedOverlay(this
-					.getResources().getDrawable(R.drawable.red_pin), this);
+					.getResources().getDrawable(R.drawable.pin_purple), this);
 			
 			OverlayItem parknstore = new OverlayItem(Store.PARK_N_SHOP.getGeoPoint(), getResources().getText(R.string.park_n_shop).toString(), getResources().getText(R.string.park_n_shop_loc).toString() +"\n" + getResources().getText(R.string.park_n_shop_opening).toString());
 			overlay.addOverlay(parknstore);
@@ -139,38 +139,24 @@ public class CampusMap extends MapActivity {
 			mapOverlays.add(overlay);
 		}
 		
-		// String map = bundle.getString("map");
-		// if (map != null){
-		// GeoPoint p = Restaurant.valueOf(map).getGeoPoint();
-		// mc.animateTo(p);
-		// }
+	
 		if (restaurant) {
 			Drawable drawable = this.getResources().getDrawable(
-					R.drawable.red_pin);
+					R.drawable.pin_yellow);
 			BuildingItemizedOverlay itemizedoverlay = new BuildingItemizedOverlay(
 					drawable, this);
 
-			GeoPoint ucCan = Restaurant.UC.getGeoPoint();
-			itemizedoverlay.addOverlay(new OverlayItem(ucCan, getResources()
-					.getText(R.string.uc_student_canteen).toString(),
-					getResources().getText(R.string.uc_student_canteen_opening)
-							.toString()));
-
-			GeoPoint ucStaffCan = Restaurant.UC_STAFF.getGeoPoint();
-			itemizedoverlay.addOverlay(new OverlayItem(ucStaffCan,
-					getResources().getText(R.string.uc_staff_restaurant)
-							.toString(), getResources().getText(
-							R.string.uc_staff_restaurant_opening).toString()));
-
-			// for (Restaurant restaurant : Restaurant.values()) {
-			// OverlayItem overlayitem = new
-			// OverlayItem(restaurant.getGeoPoint(),
-			// "Restaurant", restaurant.name());
-			// itemizedoverlay2.addOverlay(overlayitem);
-			// }
+			Restaurant[] restaurants = Restaurant.values();
+			String[] names = getResources().getStringArray(R.array.restaurant_array);
+			String[] openings = getResources().getStringArray(R.array.restaurant_opening_array);
+			
+			for (int i=0; i<restaurants.length; i++){
+				GeoPoint point = restaurants[i].getGeoPoint();
+				itemizedoverlay.addOverlay(new OverlayItem(point, names[i], openings[i]));
+			}
+			
 			mapOverlays.add(itemizedoverlay);
 		}
-		// mapOverlays.add(itemizedoverlay2);
 
 		AdView adView = (AdView) this.findViewById(R.id.adView);
 		adView.loadAd(new AdRequest());

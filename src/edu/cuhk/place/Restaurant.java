@@ -22,7 +22,10 @@ public enum Restaurant {
 	CU_POOL_SIDE_CAFE(22.41827, 114.20494),
 	CU_FRANKLIN(22.41830, 114.20520), 
 	CU_SNACK_BAR(22.41824, 114.20500),
-	CU_SCR(22.41859, 114.20945);
+	CU_SCR(22.41859, 114.20945),
+	SH(22.41834, 114.21020),
+	MS(22.41915, 114.21066);
+;
 
 	private final double latitude, longitude;
 

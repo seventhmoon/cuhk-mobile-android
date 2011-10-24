@@ -118,7 +118,8 @@ public class CampusMap extends MapActivity {
 			overlay.addOverlay(hsbcatm);
 			OverlayItem bocatm = new OverlayItem(Bank.BOA_ATM_MTR.getGeoPoint(), getResources().getText(R.string.boa_atm).toString(), getResources().getText(R.string.boa_atm_loc).toString());
 			overlay.addOverlay(bocatm);
-			
+			OverlayItem scbatm = new OverlayItem(Bank.SCB_ATM_NA.getGeoPoint(), getResources().getText(R.string.scb_atm).toString(), getResources().getText(R.string.scb_atm_loc).toString());
+			overlay.addOverlay(scbatm);
 			mapOverlays.add(overlay);
 		}
 		

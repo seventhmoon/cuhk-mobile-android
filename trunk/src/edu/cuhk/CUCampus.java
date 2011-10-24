@@ -1,7 +1,6 @@
 package edu.cuhk;
 
-import com.google.ads.AdRequest;
-import com.google.ads.AdView;
+import com.google.ads.*;
 
 import edu.cuhk.R;
 
@@ -15,7 +14,8 @@ import android.widget.ListView;
 
 public class CUCampus extends ListActivity {
 	private ArrayAdapter<String> menuItemAdapter;
-
+	
+	
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class CUCampus extends ListActivity {
 		menuItemAdapter = new ArrayAdapter<String>(this, R.layout.list_layout,
 				menuItemArray);
 		setListAdapter(menuItemAdapter);
+		
 
 		// AdView adView = (AdView)this.findViewById(R.id.adView);
 		// adView.loadAd(new AdRequest());

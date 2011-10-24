@@ -20,6 +20,8 @@
 		<item>Benjamin Franklin Centre Student Canteen</item>
 		<item>Benjamin Franklin Centre Fast Food Shop</item>
 		<item>Staff Common Room Clubhouse</item>
+		<item>S H Ho College Canteen</item>
+		<item>Morningside College Canteen</item>
 	</string-array>
 	<string-array name="restaurant_opening_array">
 		<item>07:30-21:00</item>
@@ -41,5 +43,7 @@
 		<item>11:00-21:00(Mon-Fri)\n08:30-21:00(Sun)</item>
 		<item>07:30-21:00(Mon-Sat)</item>
 		<item>07:30-10:00, 12:00-21:30</item>
+		<item>07:30-21:00(Mon-Sun)\n11:30-15:00, 17:00-20:00(Public Holidays)</item>
+		<item>07:30-21:00(Mon-Sat)\n09:00-21:00(Sun)</item>
 	</string-array>
 </resources>

@@ -13,4 +13,6 @@
 	<string name="hsbc_atm_loc">G/F University Station</string>
 	<string name="boa_atm">Bank of China ATM</string>
 	<string name="boa_atm_loc">G/F University Station</string>
+	<string name="scb_atm">Standard Chartered Bank ATM</string>
+	<string name="scb_atm_loc">G/F University Station</string>
 </resources>

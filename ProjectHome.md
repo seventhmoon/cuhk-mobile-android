@@ -1,0 +1,1 @@
+This is the mobile application on android, showing the information, including transport, buildings, restaurants, etc, in The Chinese University of Hong Kong
